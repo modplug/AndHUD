@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Android.App;
 
 using AndroidHUD;
@@ -21,6 +23,11 @@ namespace XHUD
 		{
 			AndHUD.Shared.Show(HUD.MyActivity, message, progress,(AndroidHUD.MaskType)maskType);
 		}
+
+        public static void ShowAnimatedProgress(Stream stream, string message, int progress, MaskType maskType = MaskType.Black)
+        {
+            AndHUD.Shared.ShowAnimatedProgress(HUD.MyActivity, stream, progress);
+        }
 
 		public static void Dismiss()
 		{
